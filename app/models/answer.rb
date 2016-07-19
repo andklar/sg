@@ -1,0 +1,2 @@
+class Answer < Task
+end
