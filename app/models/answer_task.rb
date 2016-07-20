@@ -1,2 +1,2 @@
-class AnswerTask < ApplicationRecord
+class AnswerTask < Task
 end

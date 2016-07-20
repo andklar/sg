@@ -1,2 +1,2 @@
-class PhotoTask < ApplicationRecord
+class PhotoTask < Task
 end
