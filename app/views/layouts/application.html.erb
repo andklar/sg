@@ -22,6 +22,8 @@
     <p id="alert"><%= flash[:alert] %></p>
   </div>
   <%= yield %>
-
+	<footer>
+		<%= link_to "New Task", new_task_path %>
+	</footer>
   </body>
 </html>
