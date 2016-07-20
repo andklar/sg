@@ -1,0 +1,2 @@
+class AnswerTask < ApplicationRecord
+end

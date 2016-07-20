@@ -1,0 +1,2 @@
+class PhotoTask < ApplicationRecord
+end
