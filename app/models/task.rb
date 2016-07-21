@@ -1,3 +1,4 @@
 class Task < ApplicationRecord
-	belongs_to :user, through: :submission
+	has_many :submissions
+	has_many :users, through: :submissions
 end

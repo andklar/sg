@@ -1,0 +1,7 @@
+Tasks Index 
+
+<% @tasks.each do |task| %>
+	<ul><strong><%= task.name %></strong>
+		<br> <%= task.description %>
+		<li class='points'><%= task.points %> Points <button></button></li></ul>
+<%end%>

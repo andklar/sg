@@ -1,5 +1,6 @@
-class UserController < ApplicationController
-  before_action :authenticate_user!
+class UsersController < ApplicationController
+  skip_before_action :require_login, only: [:index, :new, :create]
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
   # GET /users.json
@@ -12,7 +13,7 @@ class UserController < ApplicationController
   def show
   end
 
-  # GET /users/1/edit
+  # GET /users/new
   def new
     @user = User.new
   end
@@ -28,7 +29,7 @@ class UserController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        format.html { redirect_to users_url, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
@@ -51,9 +52,24 @@ class UserController < ApplicationController
     end
   end
 
-  private
-  def user_params
-    params.require(:user).permit(:email, :encrypted_password, :user_name, :first_name, :last_name, :age)
+  # DELETE /users/1
+  # DELETE /users/1.json
+  def destroy
+    @user.destroy
+    respond_to do |format|
+      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
+      format.json { head :no_content }
+    end
   end
 
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_user
+      @user = User.find(params[:id])
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def user_params
+    params.require(:user).permit(:username, :email, :password, :password_confirmation)
+  end
 end
