@@ -3,5 +3,6 @@ Tasks Index
 <% @tasks.each do |task| %>
 	<ul><strong><%= task.name %></strong>
 		<br> <%= task.description %>
-		<li class='points'><%= task.points %> Points <button></button></li></ul>
+		<li class='points'><%= task.points %>Points<button></button></li>
+		<br> <%= render 'submissions/form' %> </ul>
 <%end%>
