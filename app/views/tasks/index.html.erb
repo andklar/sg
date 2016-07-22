@@ -1,7 +1,29 @@
-Tasks Index 
+<h1 class="hello">Welcome</h1>
 
+
+
+<button class="signin">Sign In</button>
+
+<div class="modal">
+  <% @tasks.each do |task| %>
+    <ul><strong><%= task.name %></strong>
+      <br> <%= task.description %>
+      <li class='points'><%= task.points %> Points <button></button></li></ul>
+      <form class="getstarted">
+        <button type="button" class="close">x</button>
+        <input type="text" name="user" placeholder="Username">
+        <input type="password" name="pass" placeholder="Password">
+        <button type="button" class="submit">submit</button>
+      </form>
+  <%end%>
+
+</div>
+
+<script src="js/main.js"></script>
+<!--
 <% @tasks.each do |task| %>
-	<ul><strong><%= task.name %></strong>
-		<br> <%= task.description %>
-		<li class='points'><%= task.points %> Points <button></button></li></ul>
+  <ul><strong><%= task.name %></strong>
+    <br> <%= task.description %>
+    <li class='points'><%= task.points %> Points <button></button></li></ul>
 <%end%>
+ -->
