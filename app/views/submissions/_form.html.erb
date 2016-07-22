@@ -1,23 +1,23 @@
-<%= form_for(@submission, url: tasks_path, method: 'post') do |f| %>
+<%= form_for(task.submissions.build) do |f| %>
 	<div class="field hidden">
-    	<%= f.label :name %>
-    	<%= f.hidden_field :name %>
-   	</div>	
+    <%= f.label :name %>
+    <%= f.hidden_field :name %>
+  </div>	
 	
 	<div class="field hidden">
-    	<%= f.label :task_id %>
-    	<%= f.hidden_field :task_id %>
-   	</div>
+    <%= f.label :task_id %>
+    <%= f.hidden_field :task_id %>
+  </div>
 
-   	<div class="field hidden" >
-    	<%= f.label :user_id %>
-    	<%= f.hidden_field :user_id %>
-   	</div>
+  <div class="field hidden" >
+    <%= f.label :user_id %>
+    <%= f.hidden_field :user_id %>
+  </div>
 
-  	<div class="field">
-    	<%= f.label :answer %>
-    	<%= f.text_field :answer %>
-   	</div>
+  <div class="field">
+    <%= f.label :answer %>
+    <%= f.text_field :answer %>
+  </div>
 
   <%= f.submit %>
   

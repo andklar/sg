@@ -7,9 +7,7 @@ class SubmissionsController < ApplicationController
 	def create
     @submission = Submission.new(submission_params)
 
-    @submission.user_id = current_user.id
-    @submission.task_id = submission.task[:id]
-    @submission.name = submission.task[:name]
+    @submission.user = current_user
 
     if @submission.save
       redirect_to tasks_path, notice: 'You got it!'
