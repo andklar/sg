@@ -1,5 +1,21 @@
-@import "bootstrap-sprockets"; 
-@import "bootstrap"; 
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
 @import "main";
 
+
+img {
+    max-width: 100%;
+}
+
+.challenge-logo {
+    max-width: 350px;
+    // position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.navbar navbar-light bg-faded {
+  color: yellow;
+}
