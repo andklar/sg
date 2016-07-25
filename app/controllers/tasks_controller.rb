@@ -2,9 +2,6 @@ class TasksController < ApplicationController
 
 	def index
     @tasks = Task.all
-    @task = @tasks.first
-    # @submissions = @task.submissions
-    @submission = @task.submissions.create(name: @task.name, task_id: @task.id, user_id: current_user.id)
   end
 
   def show
