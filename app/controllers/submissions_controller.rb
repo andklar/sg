@@ -11,7 +11,7 @@ class SubmissionsController < ApplicationController
     @submission.user = current_user
     if @submission.user.score == nil
       @submission.user.score = 0
-    end  
+    end
 
     if @submission.answer != @task.answer
       redirect_to tasks_path, notice: "ERROR!ERROR!"
@@ -24,7 +24,7 @@ class SubmissionsController < ApplicationController
 
   def edit
   	@submission = Submission.find(params[:id])
-  end 
+  end
 
   def update
   	@submission = Submission.find(params[:id])
@@ -42,7 +42,7 @@ class SubmissionsController < ApplicationController
   end
 
   def load_task
-    @task = Task.find(params[:task_id])
+    @task = Task.find(params[:task_id] || params[:answer_task_id] || params[:photo_task_id])
   end
 
 end
