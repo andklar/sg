@@ -5,24 +5,28 @@ Tasks Index
 
 		<li class='taskname-container'>
 
-		<button id='taskname-button'><%= task.name %></button>
-			
-		<div class='modal' id='modal'>
-			<p><%= task.description %></p>
-			<%= task.points %>Points<input type="checkbox"></input>
-		  	
-		  	<%= form_for([task, task.submissions.build]) do |f| %>
-			  	<div class="field">
-			    	<%= f.label :answer %>
-			    	<%= f.text_field :answer %>
-			  	</div>
-			  	<%= f.submit %>			  
+			<button id='taskname-button'><%= task.name %></button>
+				
+			<div class='modal' id='modal'>
+
+				<p><%= task.description %></p>
+				
+				<%= task.points %>Points<input type="checkbox"></input>
+			  	
+			  <%= form_for([task, task.submissions.build]) do |f| %>
+					<div class="field">
+				  	<%= f.label :answer %>
+				   	<%= f.text_field :answer %>
+				 	</div>
+				 	<%= f.submit %>			  
 				<% end %>
 
 			</div>
 		
 		</li>
+
 	<%end%>
+
 </ul>
  
 
