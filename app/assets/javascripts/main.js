@@ -1,10 +1,9 @@
 $(document).on('ready', function() { 
  
 // fade in modal window 
-  // $('.taskname').on('click', function(){ 
-  // $('.modal').fadeIn('slow');
-  // console.log('JIJIJIJIJI'); 
-  // });  
+  $('#taskname-button').on('click', function(){ 
+  $('#modal').fadeIn('slow');
+  });  
  
 });
 

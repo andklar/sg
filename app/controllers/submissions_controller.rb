@@ -1,4 +1,5 @@
 class SubmissionsController < ApplicationController
+  before_action :load_task
 
 	def new
 		@submission = Submission.new
@@ -9,10 +10,10 @@ class SubmissionsController < ApplicationController
 
     @submission.user = current_user
 
-    if @submission.save
+    if @submission.answer != @task.answer
+      redirect_to tasks_path, notice: "ERROR!ERROR!"
+    elsif @submission.save
       redirect_to tasks_path, notice: 'You got it!'
-    else
-      render :new, notice: 'Not quite! Give it another go!'
     end
   end
 
@@ -33,5 +34,9 @@ class SubmissionsController < ApplicationController
 
   def submission_params
   	params.require(:submission).permit(:name, :task_id, :user_id, :answer)
+  end
+
+  def load_task
+    @task = Task.find(params[:task_id])
   end
 end

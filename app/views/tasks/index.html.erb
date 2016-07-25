@@ -1,22 +1,26 @@
 Tasks Index 
 
 <ul>
-<% @tasks.each do |task| %>
-		<li class='taskname-container'><strong><%= task.name %></strong></div>
-			<p><%= task.description %></p> 
-			<div><%= task.points %>Points<button></button></div>
+	<% @tasks.each do |task| %>
 
-		  <<%= form_for([task, task.submissions.build]) do |f| %>
+		<li class='taskname-container'>
 
-			  <div class="field">
-			    <%= f.label :answer %>
-			    <%= f.text_field :answer %>
-			  </div>
+		<button id='taskname-button'><%= task.name %></button>
+			
+		<div class='modal' id='modal'>
+			<p><%= task.description %></p>
+			<%= task.points %>Points<input type="checkbox"></input>
+		  	
+		  	<%= form_for([task, task.submissions.build]) do |f| %>
+			  	<div class="field">
+			    	<%= f.label :answer %>
+			    	<%= f.text_field :answer %>
+			  	</div>
+			  	<%= f.submit %>			  
+				<% end %>
 
-			  <%= f.submit %>
-			  
-			<% end %>
-
+			</div>
+		
 		</li>
 	<%end%>
 </ul>
