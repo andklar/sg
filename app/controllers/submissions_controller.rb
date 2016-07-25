@@ -9,11 +9,16 @@ class SubmissionsController < ApplicationController
     @submission = Submission.new(submission_params)
 
     @submission.user = current_user
+    if @submission.user.score == nil
+      @submission.user.score = 0
+    end  
 
     if @submission.answer != @task.answer
       redirect_to tasks_path, notice: "ERROR!ERROR!"
     elsif @submission.save
-      redirect_to tasks_path, notice: 'You got it!'
+      @submission.user.score += @task.points
+      @submission.user.save
+      redirect_to tasks_path, notice: 'You got it! Your Score: #{@submission.user.score}'
     end
   end
 
@@ -39,4 +44,5 @@ class SubmissionsController < ApplicationController
   def load_task
     @task = Task.find(params[:task_id])
   end
+
 end
