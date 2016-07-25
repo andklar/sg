@@ -7,45 +7,43 @@
       <%= csrf_meta_tags %>
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-
-      <!-- link to main.scss file -->
-      <link rel="stylesheet" href="css/main.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
-
   <body>
 
-    <!-- Collapsible Navbar -->
-    <div class="collapse" id="exCollapsingNavbar">
-    <div class="bg-inverse p-a-1">
-      <span class="text-muted"></span>
 
-      <!-- Edit, Profile, Logout inside collapsible Navbar (Hamburger) -->
-      <div id="nav">
-        <% if current_user %>
-          <%= link_to "Edit Profile", edit_user_path(current_user.id) %>
-          <%= link_to "Logout", :logout, method: :post %>
-        <% else %>
-          <%= link_to "Register", new_user_path %> |
-          <%= link_to "Login", :login %>
-        <% end %>
-      </div>
+<div class="hamburger-container">
+  <aside class="sidebar">
+    <nav>
+      <ul class="side-menu">
+        <li>Item 001</li>
+        <li>Item 002</li>
+        <li>Item 003</li>
+        <li>Item 004</li>
+        <li>Item 005</li>
+      </ul>
+    </nav>
+  </aside>
+
+  <a id="nav-toggle" href="#"><span></span></a>
+</div>
+
+   </div>
+
+    <div>
+      <p id="notice"><%= flash[:notice] %></p>
+      <p id="alert"><%= flash[:alert] %></p>
     </div>
-  </div>
-  <nav class="navbar navbar-light bg-faded">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
-      &#9776;
-    </button>
-  </nav>
 
 
-  <div>
-    <p id="notice"><%= flash[:notice] %></p>
-    <p id="alert"><%= flash[:alert] %></p>
-  </div>
-  <%= yield %>
-  <footer>
-    <%= link_to "New Task", new_task_path %>
-  </footer>
+    <%= yield %>
+<br>
+    <footer>
+      <!-- <%= link_to "New Task", new_task_path %> -->
+      <div class="footer">
+        &copy;&nbsp;2016 NextSuperGeek
+      </div>
+    </footer>
+
   </body>
 </html>

@@ -3,7 +3,11 @@ root :to => 'users#welcome'
 
 resources :user_sessions
 resources :users
-resources :tasks
+
+resources :tasks do
+	resources :submissions
+end
+
 
 get 'login' => 'user_sessions#new', :as => :login
 post 'logout' => 'user_sessions#destroy', :as => :logout

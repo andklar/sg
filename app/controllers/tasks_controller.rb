@@ -12,6 +12,10 @@ class TasksController < ApplicationController
     @task = Task.new
   end
 
+  def edit
+    @task = Task.find(params[:id])
+  end
+
   def create
     @task = Task.new(task_params)
 
@@ -26,9 +30,17 @@ class TasksController < ApplicationController
     end
   end
 
+  def update
+    if @task.update(task_params)
+      redirect_to tasks_url, notice: 'Task was updated'
+    else
+      render :edit
+    end
+  end
+
   private
 
   def task_params
-  	params.require(:task).permit(:name, :description, :points)
+  	params.require(:task).permit(:name, :description, :points, :answer)
   end
 end
