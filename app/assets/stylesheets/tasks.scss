@@ -2,6 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.task-background {
+  max-width: 100%;
+  display: block;
+  margin-top: 50px;
+}
+
 .points {
-	float: right;
+  float: right;
 }
