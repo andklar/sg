@@ -1,6 +1,46 @@
-@import "bootstrap-sprockets"; 
-@import "bootstrap"; 
-
+@import "bootstrap-sprockets";
+@import "bootstrap";
 @import "main";
 @import "tasks";
 
+
+img {
+    max-width: 100%;
+}
+
+.museum_image {
+    margin-top: 50px;
+}
+
+div#nav {
+    float: right;
+    margin-right: 15px;
+}
+
+.challenge-logo {
+    max-width: 350px;
+    // position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.navbar navbar-light bg-faded {
+  color: yellow;
+}
+
+.footer {
+  margin-top: 25%;
+  margin-left: 10px;
+}
+
+// a {
+//     border-radius: 40px;
+// }
+
+// ===================== Enter button for welcome page =========================
+button.btn.btn-default {
+    color: black;
+    background-color: yellow;
+    border-radius: 20px;
+}

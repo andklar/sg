@@ -1,3 +1,37 @@
+// =================== Enter Button on welcome page====================
+button.btn.btn-default {
+    margin: 0 auto;
+    width: 150px;
+    text-align: center;
+}
+
+// =================== Tasks buttons on Task index====================
+
+button.btn.btn-primary {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  // margin-top: 0;
+}
+
+button.btn.btn-default {
+    display: block;
+}
+
+// background image for task index
+.task-background {
+  margin-top: 50px;
+}
+
+// runner logo in task index
+.runner {
+  // position: relative;
+  display: block;
+  margin-top: -5%;
+  margin-left: 27%;
+  margin-right: 20%;
+}
+
 #points-heading {
     display: inline;
     float: right;
