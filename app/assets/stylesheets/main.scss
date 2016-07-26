@@ -46,14 +46,13 @@ html,
 body,
 .hamburger-container {
   width: 100%;
-  overflow: hidden;
   margin: 0;
   padding: 0;
 }
 
 .hamburger-container {
   background-color: black;
-  width: 100%;
+  overflow: hidden;
   height: 40px;
   top: 5%;
 }
@@ -116,4 +115,16 @@ body,
 
 .sidebar.is-open {
   left: 0;
+}
+
+.notification {
+
+  p {
+    margin: 0;
+  }
+}
+
+// Styling for homepage image
+.museum-image {
+
 }
