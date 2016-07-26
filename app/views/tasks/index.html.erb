@@ -3,42 +3,45 @@
 </div>
 <br>
 <div class="runner">
-  <%= image_tag ("runner-edit") %>
+    <%= image_tag ("runner-edit") %>
 </div>
 
-<div>Your Score: <%= @current_user.score %></div>
+<div>Your Score:
+    <%= @current_user.score %></div>
 
 Tasks Index
 
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
     <% @tasks.each do |task| %>
 
-      <div class="panel panel-default">
+    <div class="panel panel-default">
         <div class="panel-heading" role="tab" id="heading<%=task.id%>">
-          <h4 class="panel-title">
-            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<%=task.id%>" aria-expanded="false" aria-controls="collapse<%=task.id%>">
-              <%= task.name %>  <div id='points-heading'><%= task.points %> Points <input type="checkbox"></input></div>
-            </a>
-          </h4>
+            <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<%=task.id%>" aria-expanded="false" aria-controls="collapse<%=task.id%>">
+                    <%= task.name %>
+                    <div id='points-heading'><%= task.points %>
+                        Points
+                        <input type="checkbox"></input>
+                    </div>
+                </a>
+            </h4>
         </div>
-      </div>
+    </div>
 
-      <div id="collapse<%=task.id %>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading<%=task.id%>">
+    <div id="collapse<%=task.id %>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading<%=task.id%>">
         <div class="panel-body">
 
-          <%= task.description %>
-          <%= form_for([task, task.submissions.build]) do |f| %>
+            <%= task.description %>
+            <%= form_for([task, task.submissions.build]) do |f| %>
             <div class="field" id="dropdown-heading">
-               <%= f.label :answer %>
-               <%= f.text_field :answer %>
-              <%= f.submit %>
+                <%= f.label :answer %>
+                <%= f.text_field :answer %>
+                <%= f.submit %>
             </div>
-          <% end %>
-
-
+            <% end %>
 
         </div>
-      </div>
+    </div>
 
     <%end%>
 
