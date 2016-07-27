@@ -1,10 +1,10 @@
 $(document).on('ready', function() {
-     $('#nav-toggle').on('click', function(e) {
+		console.log('Is this working at all?')
+    $('#nav-toggle').on('click', function(e) {
     e.preventDefault();
     $(this).toggleClass('is-open');
     $('.sidebar').toggleClass('is-open');
   });
-
 });
 
 // fade in modal window

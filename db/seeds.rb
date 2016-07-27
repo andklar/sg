@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 Task.destroy_all
+User.destroy_all
 
 5.times do
   AnswerTask.create(
@@ -22,5 +23,13 @@ end
     description: Faker::Lorem.paragraph,
     points: Faker::Number.between(2, 6) * 100,
     answer: "one"
+  )
+end
+
+5.times do
+  User.create(
+    username: Faker::Internet.user_name,
+    email: Faker::Internet.email,
+    score: Faker::Number.between(2, 23) * 100
   )
 end

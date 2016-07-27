@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
+    @highest_score = User.all.order(score: :desc)
     @users = User.all
   end
 

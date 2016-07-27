@@ -1,0 +1,191 @@
+<div class="modal modal-fullscreen fade" id="modal-fullscreen" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- typeform -->
+
+<!-- <a class="typeform-share link" href="https://andklar.typeform.com/to/z3KGje" data-mode="1" target="_blank">Launch me!</a>
+
+<script>(function(){var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id='typef_orm',b='https://s3-eu-west-1.amazonaws.com/share.typeform.com/';if(!gi.call(d,id)){js=ce.call(d,'script');js.id=id;js.src=b+'share.js';q=gt.call(d,'script')[0];q.parentNode.insertBefore(js,q)}})()</script> -->
+
+
+
+<!-- multistep form -->
+
+<form id="msform" class='modal'>
+	<!-- fieldsets -->
+	<fieldset>
+		<h2 class="fs-title">So what should we call you?</h2>
+		<h3 class="fs-subtitle">This is step 1</h3>
+		<input type="text" name="username" placeholder="Username" />
+		<input type="button" name="next" class="next action-button" value="Next" />
+	</fieldset>
+	<fieldset class='avatar'>
+		<h2 class="fs-title">Pick your avatar</h2>
+		<h3 class="fs-subtitle" id='icon-select'>This is step 2</h3>
+		<input type="image" src="https://cdn0.iconfinder.com/data/icons/avatar-2/500/boy-128.png" size="50x50"  placeholder="Boy" />
+		<input type="image" src="http://image.flaticon.com/icons/png/128/62/62806.png" placeholder="Girl" />
+		<input type="button" name="previous" class="previous action-button" value="Previous" />
+		<input type="button" name="next" class="next action-button" value="Next" />
+	</fieldset>
+	<fieldset>
+		<h2 class="fs-title">Let's get going!</h2>
+		<input type="button" name="previous" class="previous action-button" value="Previous" />
+		<input type="submit" name="submit" class="submit action-button" value="Submit" />
+	</fieldset>
+</form>
+
+<!-- jQuery -->
+<script src="http://thecodeplayer.com/uploads/js/jquery-1.9.1.min.js" type="text/javascript"></script>
+<!-- jQuery easing plugin -->
+<script src="http://thecodeplayer.com/uploads/js/jquery.easing.min.js" type="text/javascript"></script>
+
+<!-- CSS -->
+
+// ======================= Welcome Form ===========================
+
+/*basic reset*/
+* {margin: 0; padding: 0;}
+
+body {
+  font-family: helvetica, arial, verdana;
+}
+/*form styles*/
+#msform {
+  width: 100%;
+  margin: 50px auto;
+  text-align: center;
+  position: relative;
+}
+#msform fieldset {
+  background: #FFF200;
+  border: 0 none;
+  border-radius: 3px;
+  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+  padding: 20px 30px;
+  
+  box-sizing: border-box;
+  width: 80%;
+  margin: 0 10%;
+  
+  /*stacking fieldsets above each other*/
+/*  position: relative;*/
+
+}
+
+.avatar {
+	display: inline-block;
+}
+.avatar image {
+	size: 50x50;
+}
+
+/*Hide all except first fieldset*/
+#msform fieldset:not(:first-of-type) {
+  display: none;
+}
+/*inputs*/
+#msform input, #msform textarea {
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  width: 10%;
+  box-sizing: border-box;
+  font-family: helvetica;
+  color: #2C3E50;
+  font-size: 13px;
+}
+/*buttons*/
+#msform .action-button {
+  width: 100px;
+  background: grey;
+  font-weight: bold;
+  color: white;
+  border: 0 none;
+  border-radius: 1px;
+  cursor: pointer;
+  padding: 10px 5px;
+  margin: 10px 5px;
+}
+#msform .action-button:hover, #msform .action-button:focus {
+  box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
+}
+/*headings*/
+.fs-title {
+  font-size: 15px;
+  text-transform: uppercase;
+  color: #2C3E50;
+  margin-bottom: 10px;
+}
+.fs-subtitle {
+  font-weight: normal;
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 20px;
+}
+/*progressbar*/
+#progressbar {
+  margin-bottom: 30px;
+  overflow: hidden;
+  /*CSS counters to number the steps*/
+  counter-reset: step;
+}
+#progressbar li {
+  list-style-type: none;
+  color: white;
+  text-transform: uppercase;
+  font-size: 9px;
+  width: 33.33%;
+  float: left;
+  position: relative;
+}
+#progressbar li:before {
+  content: counter(step);
+  counter-increment: step;
+  width: 20px;
+  line-height: 20px;
+  display: block;
+  font-size: 10px;
+  color: #333;
+  background: white;
+  border-radius: 3px;
+  margin: 0 auto 5px auto;
+}
+/*progressbar connectors*/
+#progressbar li:after {
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: white;
+  position: relative;
+  left: -50%;
+  top: 9px;
+  z-index: -1; /*put it behind the numbers*/
+}
+#progressbar li:first-child:after {
+  /*connector not needed before the first step*/
+  content: none; 
+}
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+#progressbar li.active:before,  #progressbar li.active:after{
+  background: #27AE60;
+  color: white;
+}
+
+<!-- CSS -->
