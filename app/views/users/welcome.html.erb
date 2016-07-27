@@ -25,27 +25,38 @@
       </div>
       <div class="modal-body">
 
-			<form action="user_path(current_user[:id])" method="patch">
+			<%= form_for current_user do |f| %>
 	
 				<fieldset id='fs-username'>
 					<h2 class="fs-title">So what should we call you?</h2>
-					<input type="text" name="username" placeholder="Username" />
+
+   					 <%= f.text_field :username, value: "" %>
+
 				</fieldset>
 
 				<fieldset>
 					<h2 class="fs-title">Choose your avatar</h2>
-					<img id='left-icon' src="https://cdn0.iconfinder.com/data/icons/avatar-2/500/boy-128.png" />
-					<input type="radio" name="icon" value="boy"  />
-					<img id='right-icon' src="http://image.flaticon.com/icons/png/128/62/62806.png" />
-					<input type="radio" name="icon" value="girl"  />
+						<div class='container'>
+							<%= f.label :icon_boy, 'boy' do %>
+								<%= image_tag "https://cdn0.iconfinder.com/data/icons/avatar-2/500/boy-128.png" %>
+							<%end%>
+							<%= f.radio_button :icon, 'boy'  %>
+							
+							<%= f.label :icon_girl do %>
+								<%= image_tag "http://image.flaticon.com/icons/png/128/62/62806.png" %>
+							<%end%>
+							<%= f.radio_button :icon, 'girl' %>
+						</div>
 				</fieldset>
 
 				<fieldset id='fs-submit'>
 					<h2 class="fs-title">Ready?</h2>
-					<input type="submit" name="submit" class="submit action-button" value="Let's Go!" />
+
+					<%= f.submit %>
+
 				</fieldset>
 			  
-			</form>
+			<% end %>
         
       </div>
       <div class="modal-footer">
