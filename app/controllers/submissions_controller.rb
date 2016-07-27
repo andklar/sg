@@ -34,3 +34,15 @@ class SubmissionsController < ApplicationController
       render :edit, notice: 'Not quite! Give it another go!'
     end
   end
+
+    private
+
+    def submission_params
+      params.require(:submission).permit(:name, :task_id, :user_id, :answer)
+    end
+
+    def load_task
+      @task = Task.find(params[:task_id] || params[:answer_task_id] || params[:photo_task_id])
+    end
+
+  end
