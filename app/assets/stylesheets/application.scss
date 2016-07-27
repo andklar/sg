@@ -2,6 +2,7 @@
 @import "bootstrap";
 @import "main";
 @import "tasks";
+@import "welcome";
 
 
 img {
@@ -39,8 +40,8 @@ div#nav {
 // }
 
 // ===================== Enter button for welcome page =========================
-button.btn.btn-default {
+/*button.btn.btn-default {
     color: black;
     background-color: yellow;
     border-radius: 20px;
-}
+}*/
