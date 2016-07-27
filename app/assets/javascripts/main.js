@@ -5,12 +5,12 @@ $(document).on('ready', function() {
     $('.sidebar').toggleClass('is-open');
   });
 
-
-  // $('.trigger').on('click', function(){
-  //   $(this).toggleClass('clicked');
-  // }); // slide in for Mission on homepage
-
+  var result = $('#notice').html() // target the html inside the notice id
+  if (result) { $('#myModal').modal('show')
+  }
+  
 });
+
 
 
 
