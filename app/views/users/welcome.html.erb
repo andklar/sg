@@ -1,6 +1,6 @@
   <!-- Background image -->
-<div class="museum-image hidden">
-  <%= image_tag ("subash2") %>
+<div class="museum-image">
+  <%= image_tag ("museum3-edit") %>
 </div>
 
 
@@ -25,25 +25,22 @@
       </div>
       <div class="modal-body">
 
-			<form action="edit_user_path(current_user.id)" method="patch">
+			<form action="user_path(current_user[:id])" method="patch">
 	
-				<fieldset>
+				<fieldset id='fs-username'>
 					<h2 class="fs-title">So what should we call you?</h2>
 					<input type="text" name="username" placeholder="Username" />
-					<input type="button" name="next" class="next action-button" value="Next" />
 				</fieldset>
 
 				<fieldset>
 					<h2 class="fs-title">Choose your avatar</h2>
-					<img src="https://cdn0.iconfinder.com/data/icons/avatar-2/500/boy-128.png" />
+					<img id='left-icon' src="https://cdn0.iconfinder.com/data/icons/avatar-2/500/boy-128.png" />
 					<input type="radio" name="icon" value="boy"  />
-					<img src="http://image.flaticon.com/icons/png/128/62/62806.png" />
+					<img id='right-icon' src="http://image.flaticon.com/icons/png/128/62/62806.png" />
 					<input type="radio" name="icon" value="girl"  />
-					<input type="button" name="previous" class="previous action-button" value="Previous" />
-					<input type="button" name="next" class="next action-button" value="Next" />
 				</fieldset>
 
-				<fieldset>
+				<fieldset id='fs-submit'>
 					<h2 class="fs-title">Ready?</h2>
 					<input type="submit" name="submit" class="submit action-button" value="Let's Go!" />
 				</fieldset>
