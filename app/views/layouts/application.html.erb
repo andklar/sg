@@ -13,14 +13,17 @@
 
 
 <div class="hamburger-container">
+  <div class="nav-logo">
+    <%= image_tag ("tsngChallenge") %>
+  </div>
   <aside class="sidebar">
     <nav class="side-menu-content">
       <ul class="side-menu">
-        <li>Item 001</li>
+        <li><%= link_to "Login", user_sessions_url %></li>
         <li>Item 002</li>
-        <li>Item 003</li>
+        <!-- <li>Item 003</li>
         <li>Item 004</li>
-        <li>Item 005</li>
+        <li>Item 005</li> -->
       </ul>
     </nav>
   </aside>

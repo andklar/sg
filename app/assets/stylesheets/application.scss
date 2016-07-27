@@ -18,8 +18,8 @@ div#nav {
 }
 
 .challenge-logo {
-    max-width: 350px;
-    // position: relative;
+    max-width: 330px;
+    margin-top: -20px;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -41,6 +41,48 @@ div#nav {
 // ===================== Enter button for welcome page =========================
 button.btn.btn-default {
     color: black;
-    background-color: yellow;
+    background-color: #feef34;
     border-radius: 20px;
+    box-shadow: 0 4px 5px 0 rgba(0,0,0,0.24),0 9px 23px 0 rgba(0,0,0,0.19);
+}
+
+// testing button for hover
+.button {
+  display: inline-block;
+  border-radius: 50px;
+  background-color: #feef34;
+  border: none;
+  color: #black;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 150px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
 }

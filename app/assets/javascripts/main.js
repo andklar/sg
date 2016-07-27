@@ -5,7 +5,14 @@ $(document).on('ready', function() {
     $('.sidebar').toggleClass('is-open');
   });
 
+
+  // $('.trigger').on('click', function(){
+  //   $(this).toggleClass('clicked');
+  // }); // slide in for Mission on homepage
+
 });
+
+
 
 // fade in modal window
  // $('.taskname').on('click', function(){
