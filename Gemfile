@@ -15,6 +15,13 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
+# Use CarrierWave for Images Upload
+gem'carrierwave'
+# Use Fog for Upload to Cloud Storage
+gem'fog'
+# Use Google-api-client to access Google Cloud Storage
+gem "google-api-client"
+gem "mime-types"
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
