@@ -9,6 +9,7 @@ class SubmissionsController < ApplicationController
     @submission = Submission.new(submission_params)
 
     @submission.user = current_user
+    @submission.task = @task
     if @submission.user.score == nil
       @submission.user.score = 0
     end

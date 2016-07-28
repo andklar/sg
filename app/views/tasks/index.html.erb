@@ -6,9 +6,6 @@
     <%= image_tag "runner-edit.png" %>
 </div>
 
-<div>Your Score: <%= @current_user.score %></div>
-
-
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
     <% @tasks.each do |task| %>
 
@@ -32,9 +29,10 @@
             <%= task.description %>
             <%= form_for([task, task.submissions.build]) do |f| %>
             <div class="field" id="dropdown-heading">
-                <%= f.label :answer %>
-                <%= f.text_field :answer %>
-                <%= f.submit %>
+                <% if task.submissions.where(user: current_user).empty? %>
+                    <%= f.text_field :answer %>
+                    <%= f.submit "I know this!" %>
+                <% end %>    
             </div>
             <% end %>
 

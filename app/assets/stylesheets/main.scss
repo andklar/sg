@@ -9,6 +9,8 @@ body {
   position: relative;
   font-family: 'Dessau';
   font-size: 20px;
+  background-color: #feef34;
+  margin: 0px;
 }
 
 @font-face {
@@ -206,16 +208,27 @@ ul.side-menu li {
 
 }
 
+.panel-title {
+    font-size: 28px;
+    color: black;
+    margin: 14px;
+}
+
+.panel-body {
+  font-size: 10px;
+}
+
 // =================== Leaderboard styling ====================
 
 .leaderboard {
   background-color: #feef34;
   font-size: 20px;
-  margin: 30px;
+  margin: 0px;
 }
 
 .table {
   border-color: black;
+  margin: 30px;
 }
 
 .table > thead > tr > th {
@@ -240,9 +253,19 @@ ul.side-menu li {
     border-top: 1px solid black;
 }
 
-hr {
-    margin-top: 20px;
+.leaderboard > hr {
+    margin-top: 42px;
     margin-bottom: 20px;
+    margin-left: 30px;
+    border: 0;
+    border-top: 3px solid #000000;
+}
+
+.leaderboard > h1 {
+    margin-left: 36px;
+}
+
+hr {
     border: 0;
     border-top: 3px solid #000000;
 }
