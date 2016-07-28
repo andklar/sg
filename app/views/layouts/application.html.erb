@@ -13,17 +13,20 @@
 
 
 <div class="hamburger-container">
-  <div class="nav-logo">
-    <%= image_tag ("tsngChallenge") %>
+  <div>
+    <div class="nav-logo">
+      <%= image_tag ("tsngChallenge") %>
+    </div>
+    <div class='score-container'>
+      <%= current_user.score %>
+    </div>
   </div>
   <aside class="sidebar">
     <nav class="side-menu-content">
-      <ul class="side-menu">
-        <li><%= link_to "Login", user_sessions_url %></li>
-        <li>Item 002</li>
-        <!-- <li>Item 003</li>
-        <li>Item 004</li>
-        <li>Item 005</li> -->
+      <ul class="side-menu" data-turbolinks="false">
+        <li><%= link_to "LEADERBOARD", users_url %></li>
+        <li><%= link_to "THE MISSION", tasks_url %></li>
+        <li><%= link_to "ABOUT US" %></li>
       </ul>
     </nav>
   </aside>

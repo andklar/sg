@@ -9,8 +9,6 @@
 <div>Your Score: <%= @current_user.score %></div>
 
 
-Tasks Index
-
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
     <% @tasks.each do |task| %>
 
@@ -21,7 +19,7 @@ Tasks Index
                     <%= task.name %>
                     <div id='points-heading'><%= task.points %>
                         Points
-                        <input type="checkbox"></input>
+                        <span class='glyphicon glyphicon-ok'></span>
                     </div>
                 </a>
             </h4>

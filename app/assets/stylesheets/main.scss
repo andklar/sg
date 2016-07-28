@@ -8,6 +8,7 @@ html {
 body {
   position: relative;
   font-family: 'Dessau';
+  font-size: 20px;
 }
 
 @font-face {
@@ -72,21 +73,33 @@ button.btn.btn-default {
 .hamburger-container {
   background-color: #feef34;
   overflow: hidden;
-  height: 51px;
+  height: 56px;
   top: 5%;
 }
 
 aside.sidebar.is-open {
     background-color: #feef34;
-    width: 110px;
+    width: 210px;
 }
 
 nav.side-menu-content {
-    margin-top: 40px;
+    margin-top: 100px;
+    color: black;
+}
+
+a {
+    color: #000000;
+    text-decoration: none;
 }
 
 ul.side-menu {
     margin-left: -5px;
+    list-style: none;
+}
+
+ul.side-menu li {
+    margin-bottom: 10px;
+
 }
 
 #nav-toggle {
