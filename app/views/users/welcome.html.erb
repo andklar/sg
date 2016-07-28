@@ -1,7 +1,8 @@
   <!-- Background image -->
 <div class="museum-image">
-  <%= image_tag ("subash2") %>
+  <%= image_tag ("museum3-edit") %>
 </div>
+
 
 <!-- Supergeek challenge logo -->
 <div class="challenge-logo">
@@ -10,18 +11,58 @@
 
 
 <!-- Large button group -->
-<div class="btn-enter" >
-  <button type="button" class="btn btn-default"> <%= link_to "ENTER", tasks_url %> </button>
+
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal-fullscreen">
+  Enter
+</button>
+
+<div class="modal modal-fullscreen fade" id="modal-fullscreen" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Quick Start</h4>
+      </div>
+      <div class="modal-body">
+
+			<%= form_for current_user do |f| %>
+	
+				<fieldset id='fs-username'>
+					<h2 class="fs-title">So what should we call you?</h2>
+
+   					 <%= f.text_field :username, value: "" %>
+
+				</fieldset>
+
+				<fieldset>
+					<h2 class="fs-title">Choose your avatar</h2>
+						<div class='container'>
+							<%= f.label :icon_boy, 'boy' do %>
+								<%= image_tag "https://cdn0.iconfinder.com/data/icons/avatar-2/500/boy-128.png" %>
+							<%end%>
+							<%= f.radio_button :icon, 'boy'  %>
+							
+							<%= f.label :icon_girl do %>
+								<%= image_tag "http://image.flaticon.com/icons/png/128/62/62806.png" %>
+							<%end%>
+							<%= f.radio_button :icon, 'girl' %>
+						</div>
+				</fieldset>
+
+				<fieldset id='fs-submit'>
+					<h2 class="fs-title">Ready?</h2>
+
+					<%= f.submit %>
+
+				</fieldset>
+			  
+			<% end %>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
 </div>
 
-
-<!-- <button> <%= link_to "ENTER", tasks_url %></button> -->
-
-<!-- <a class="typeform-share link" href="https://forms.typeform.io/to/GPBvhw5Y5v" data-mode="2" target="_blank">LET'S GO!</a>
-
-<script>(function(){var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id='typef_orm',b='https://s3-eu-west-1.amazonaws.com/share.typeform.com/';if(!gi.call(d,id)){js=ce.call(d,'script');js.id=id;js.src=b+'share.js';q=gt.call(d,'script')[0];q.parentNode.insertBefore(js,q)}})()</script> -->
-
-
-<a class="typeform-share link" href="https://andklar.typeform.com/to/z3KGje" data-mode="1" target="_blank">Launch me!</a>
-
-<script>(function(){var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id='typef_orm',b='https://s3-eu-west-1.amazonaws.com/share.typeform.com/';if(!gi.call(d,id)){js=ce.call(d,'script');js.id=id;js.src=b+'share.js';q=gt.call(d,'script')[0];q.parentNode.insertBefore(js,q)}})()</script>

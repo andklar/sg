@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Tutorial</title>
+    <title>The Next Super Geek</title>
       <%= stylesheet_link_tag    "application" %>
       <%= javascript_include_tag "application" %>
       <%= csrf_meta_tags %>
@@ -39,11 +39,27 @@
     <%= yield %>
 <br>
     <footer>
-      <!-- <%= link_to "New Task", new_task_path %> -->
       <div class="footer">
         &copy;&nbsp;2016 NextSuperGeek
       </div>
     </footer>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+          </div>
+          <div class="modal-body">
+              <p id="notice"><%= flash[:notice] %></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div><!---modal-->
 
   </body>
 </html>
