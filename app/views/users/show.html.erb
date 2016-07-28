@@ -1,18 +1,23 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Email:</strong>
-  <%= @user.email %>
+  CONGRATULATIONS
 </p>
 
 <p>
-  <strong>Crypted password:</strong>
-  <%= @user.crypted_password %>
+  You have successfully completed the ROM MISSION!
 </p>
 
 <p>
-  <strong>Salt:</strong>
-  <%= @user.salt %>
+  Your final score was <%=current_user.score%>
+</p>
+
+<p>
+  Please redeem your prize at the membership desk. Visit us online to find out more about the grand prize.
+</p>
+
+<p>
+  www.thenextsupergeek.com
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
