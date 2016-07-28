@@ -18,7 +18,7 @@ class SubmissionsController < ApplicationController
     elsif @submission.save
       @submission.user.score += @task.points
       @submission.user.save
-      redirect_to tasks_path, notice: 'You got it! Your Score: #{@submission.user.score}'
+      redirect_to tasks_path, notice: 'You got it!'
     end
   end
 
