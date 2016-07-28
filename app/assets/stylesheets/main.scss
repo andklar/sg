@@ -49,10 +49,11 @@ button.btn.btn-default {
 
 // runner logo in task index
 .runner {
-  // position: relative;
+  position: relative;
   display: block;
+  width: 40%;
   margin-top: -7%;
-  margin-left: 27%;
+  margin-left: 29%;
   margin-right: 20%;
 }
 
@@ -183,9 +184,9 @@ ul.side-menu li {
 
 .mission-slide {
   display: inline-block;
-  position: relative;
-  top: -400px;
-  width: 190px;
+  position: absolute;
+  top: 16%;
+  width: 20%;
   left: -100px;
   animation: myframes 1.5s ease-in-out 0s 1 alternate forwards;
 }
@@ -197,7 +198,7 @@ ul.side-menu li {
     opacity: 0;
   }
   to {
-    left: 45%;
+    left: 40%;
     transform: scale(1);
     opacity: 1;
   }
@@ -205,7 +206,7 @@ ul.side-menu li {
 
 // Styling for homepage image
 .museum-image {
-
+  margin-top: 0px;
 }
 
 .panel-title {
@@ -241,11 +242,11 @@ ul.side-menu li {
     border-bottom: 1px solid #2b2727;
 }
 
-.table > thead > tr > th, 
-.table > thead > tr > td, 
-.table > tbody > tr > th, 
-.table > tbody > tr > td, 
-.table > tfoot > tr > th, 
+.table > thead > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > th,
+.table > tbody > tr > td,
+.table > tfoot > tr > th,
 .table > tfoot > tr > td {
     padding: 8px;
     line-height: 1.42857143;
