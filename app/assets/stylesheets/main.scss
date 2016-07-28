@@ -39,10 +39,11 @@ button.btn.btn-default {
 
 // runner logo in task index
 .runner {
-  // position: relative;
+  position: relative;
   display: block;
+  width: 40%;
   margin-top: -7%;
-  margin-left: 27%;
+  margin-left: 29%;
   margin-right: 20%;
 }
 
@@ -161,9 +162,9 @@ ul.side-menu {
 
 .mission-slide {
   display: inline-block;
-  position: relative;
-  top: -400px;
-  width: 190px;
+  position: absolute;
+  top: 16%;
+  width: 20%;
   left: -100px;
   animation: myframes 1.5s ease-in-out 0s 1 alternate forwards;
 }
@@ -175,13 +176,13 @@ ul.side-menu {
     opacity: 0;
   }
   to {
-    left: 45%;
+    left: 40%;
     transform: scale(1);
     opacity: 1;
   }
 }
 
 // Styling for homepage image
-.museum-image {
-
-}
+// .museum-image {
+//   margin-top: 0%
+// }
