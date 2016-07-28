@@ -19,6 +19,8 @@ class SubmissionsController < ApplicationController
       @submission.user.score += @task.points
       @submission.user.save
       redirect_to tasks_path, notice: 'You got it!'
+    else
+      render :new
     end
   end
 

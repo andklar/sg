@@ -2,10 +2,17 @@ html {
   overflow-y: scroll;
   overflow-x: hidden;
   position: relative;
+  font-family: 'Dessau';
 }
 
 body {
   position: relative;
+  font-family: 'Dessau';
+}
+
+@font-face {
+  font-family: 'Dessau';
+  src: font-url('DessauPro.otf') format("truetype");
 }
 
 
@@ -65,7 +72,7 @@ button.btn.btn-default {
 .hamburger-container {
   background-color: #feef34;
   overflow: hidden;
-  height: 43px;
+  height: 51px;
   top: 5%;
 }
 
@@ -184,4 +191,45 @@ ul.side-menu {
 // Styling for homepage image
 .museum-image {
 
+}
+
+// =================== Leaderboard styling ====================
+
+.leaderboard {
+  background-color: #feef34;
+  font-size: 20px;
+  margin: 30px;
+}
+
+.table {
+  border-color: black;
+}
+
+.table > thead > tr > th {
+    vertical-align: bottom;
+    border-bottom: 3px solid #2b2727;
+}
+
+.table > tbody {
+    vertical-align: bottom;
+    border-bottom: 1px solid #2b2727;
+}
+
+.table > thead > tr > th, 
+.table > thead > tr > td, 
+.table > tbody > tr > th, 
+.table > tbody > tr > td, 
+.table > tfoot > tr > th, 
+.table > tfoot > tr > td {
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: 1px solid black;
+}
+
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 3px solid #000000;
 }

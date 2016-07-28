@@ -10,6 +10,7 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find_by_id(session[:user_id]) || User.where(guest_token: guest_token).first_or_initialize.tap do |user|
     	user.email = guest_token
     	user.guest_token = guest_token
+      user.username = RandomUsername.username
     	user.save(validate: false) if user.new_record?
     end
   end

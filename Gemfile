@@ -22,6 +22,8 @@ gem'fog'
 # Use Google-api-client to access Google Cloud Storage
 gem "google-api-client"
 gem "mime-types"
+# Generates random username
+gem "random_username"
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

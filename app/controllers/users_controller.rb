@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @highest_score = User.all.order(score: :desc)
+    @highest_score = User.where("score > ?", 0).order(score: :desc)
     @users = User.all
   end
 
@@ -73,6 +73,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-    params.require(:user).permit(:username, :email, :password, :password_confirmation, :score)
-  end
+      params.require(:user).permit(:username, :email, :password, :password_confirmation, :score)
+    end
 end
