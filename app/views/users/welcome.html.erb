@@ -1,6 +1,10 @@
   <!-- Background image -->
 <div class="museum-image">
-  <%= image_tag ("museum3-edit") %>
+  <%= image_tag ("new-background1") %>
+</div>
+
+<div class="mission-slide">
+  <%= image_tag("mission") %>
 </div>
 
 
@@ -25,39 +29,39 @@
       </div>
       <div class="modal-body">
 
-			<%= form_for current_user do |f| %>
-	
-				<fieldset id='fs-username'>
-					<h2 class="fs-title">So what should we call you?</h2>
+      <%= form_for current_user do |f| %>
 
-   					 <%= f.text_field :username, value: "" %>
+        <fieldset id='fs-username'>
+          <h2 class="fs-title">So what should we call you?</h2>
 
-				</fieldset>
+              <%= f.text_field :username, value: "" %>
 
-				<fieldset>
-					<h2 class="fs-title">Choose your avatar</h2>
-						<div class='container'>
-							<%= f.label :icon_boy, 'boy' do %>
-								<%= image_tag "https://cdn0.iconfinder.com/data/icons/avatar-2/500/boy-128.png" %>
-							<%end%>
-							<%= f.radio_button :icon, 'boy'  %>
-							
-							<%= f.label :icon_girl do %>
-								<%= image_tag "http://image.flaticon.com/icons/png/128/62/62806.png" %>
-							<%end%>
-							<%= f.radio_button :icon, 'girl' %>
-						</div>
-				</fieldset>
+        </fieldset>
 
-				<fieldset id='fs-submit'>
-					<h2 class="fs-title">Ready?</h2>
+        <fieldset>
+          <h2 class="fs-title">Choose your avatar</h2>
+            <div class='container'>
+              <%= f.label :icon_boy, 'boy' do %>
+                <%= image_tag "https://cdn0.iconfinder.com/data/icons/avatar-2/500/boy-128.png" %>
+              <%end%>
+              <%= f.radio_button :icon, 'boy'  %>
 
-					<%= f.submit %>
+              <%= f.label :icon_girl do %>
+                <%= image_tag "http://image.flaticon.com/icons/png/128/62/62806.png" %>
+              <%end%>
+              <%= f.radio_button :icon, 'girl' %>
+            </div>
+        </fieldset>
 
-				</fieldset>
-			  
-			<% end %>
-        
+        <fieldset id='fs-submit'>
+          <h2 class="fs-title">Ready?</h2>
+
+          <%= f.submit %>
+
+        </fieldset>
+
+      <% end %>
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -65,4 +69,3 @@
     </div>
   </div>
 </div>
-

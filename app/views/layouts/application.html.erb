@@ -7,20 +7,23 @@
       <%= csrf_meta_tags %>
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
 
 
 <div class="hamburger-container">
+  <div class="nav-logo">
+    <%= image_tag ("tsngChallenge") %>
+  </div>
   <aside class="sidebar">
-    <nav>
+    <nav class="side-menu-content">
       <ul class="side-menu">
-        <li>Item 001</li>
+        <li><%= link_to "Login", user_sessions_url %></li>
         <li>Item 002</li>
-        <li>Item 003</li>
+        <!-- <li>Item 003</li>
         <li>Item 004</li>
-        <li>Item 005</li>
+        <li>Item 005</li> -->
       </ul>
     </nav>
   </aside>
@@ -30,14 +33,14 @@
 
    </div>
 
-    <div>
+    <div class="notification">
       <p id="notice"><%= flash[:notice] %></p>
       <p id="alert"><%= flash[:alert] %></p>
     </div>
 
 
     <%= yield %>
-<br>
+<hr>
     <footer>
       <div class="footer">
         &copy;&nbsp;2016 NextSuperGeek

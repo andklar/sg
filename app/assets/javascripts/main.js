@@ -6,11 +6,15 @@ $(document).on('ready', function() {
     $('.sidebar').toggleClass('is-open');
   });
 
-  var result = $('#notice').html() //target the html inside the notice id//
-  if (result) { $('#myModal').modal('show');
+  var result = $('#notice').html() // target the html inside the notice id
+  if (result) { $('#myModal').modal('show')
   }
 
+
 });
+
+
+
 
 // fade in modal window
  // $('.taskname').on('click', function(){

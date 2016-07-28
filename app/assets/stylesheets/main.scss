@@ -1,11 +1,11 @@
-html { 
-  overflow-y: scroll; 
-  overflow-x: hidden; 
+html {
+  overflow-y: scroll;
+  overflow-x: hidden;
   position: relative;
 }
 
-body { 
-  position: relative; 
+body {
+  position: relative;
 }
 
 
@@ -27,18 +27,21 @@ button.btn.btn-primary {
 
 button.btn.btn-default {
     display: block;
+    a {
+      color: black;
+    }
 }
 
-// background image for task index
-.task-background {
-  margin-top: 50px;
-}
+// // background image for task index
+// .task-background {
+//   margin-top: 0px;
+// }
 
 // runner logo in task index
 .runner {
   // position: relative;
   display: block;
-  margin-top: -5%;
+  margin-top: -7%;
   margin-left: 27%;
   margin-right: 20%;
 }
@@ -55,23 +58,34 @@ button.btn.btn-default {
 
 .hamburger-container {
   width: 100%;
-  overflow: hidden;
   margin: 0;
   padding: 0;
 }
 
 .hamburger-container {
-  background-color: black;
-  width: 100%;
-  height: 40px;
+  background-color: #feef34;
+  overflow: hidden;
+  height: 43px;
   top: 5%;
 }
 
+aside.sidebar.is-open {
+    background-color: #feef34;
+    width: 110px;
+}
+
+nav.side-menu-content {
+    margin-top: 40px;
+}
+
+ul.side-menu {
+    margin-left: -5px;
+}
 
 #nav-toggle {
   position: relative;
   left: 2%;
-  top: 5%;
+  top: 0%;
   cursor: pointer;
   padding: 30px 100px 36px 0px;
 }
@@ -81,8 +95,8 @@ button.btn.btn-default {
 #nav-toggle span::after {
   cursor: pointer;
   height: 3px;
-  width: 20px;
-  background: red;
+  width: 25px;
+  background: black;
   position: absolute;
   display: block;
   content: '';
@@ -91,11 +105,11 @@ button.btn.btn-default {
 }
 
 #nav-toggle span::before {
-  top: -5px;
+  top: -8px;
 }
 
 #nav-toggle span::after {
-  bottom: -5px;
+  bottom: -8px;
 }
 
 #nav-toggle.is-open span {
@@ -113,10 +127,10 @@ button.btn.btn-default {
 }
 
 .sidebar {
-  background-color: black;
+  background-color: #feef34;
   position: fixed;
   height: 100%;
-  width: 300px;
+  // width: 300px;
   top: 0;
   left: -300px;
 
@@ -127,3 +141,47 @@ button.btn.btn-default {
   left: 0;
 }
 
+.notification {
+
+  p {
+    margin: 0;
+  }
+}
+
+// Styling for supergeek logo
+.nav-logo {
+  height: 100px;
+  width: 100px;
+  float: right;
+  margin-right: 5px;
+  margin-top: -8px;
+}
+
+// slide ROM mission
+
+.mission-slide {
+  display: inline-block;
+  position: relative;
+  top: -400px;
+  width: 190px;
+  left: -100px;
+  animation: myframes 1.5s ease-in-out 0s 1 alternate forwards;
+}
+
+@keyframes myframes {
+  from {
+    left: -100px;
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  to {
+    left: 45%;
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+// Styling for homepage image
+.museum-image {
+
+}
