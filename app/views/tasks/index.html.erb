@@ -1,10 +1,17 @@
 <div class="task-background">
-    <%= image_tag "museum3-edit.jpg" %>
+  <%= image_tag("new-background1") %>
+    <!-- <iframe src="https://www.youtube.com/embed/FTRqIpCko0U?autoplay=1" frameborder="0" allowfullscreen></iframe> -->
 </div>
 <br>
 <div class="runner">
     <%= image_tag "runner-edit.png" %>
 </div>
+
+<!-- <div>Your Score: <%= @current_user.score %></div> -->
+
+
+Tasks Index
+
 
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
     <% @tasks.each do |task| %>
@@ -36,7 +43,7 @@
                 <% if task.submissions.where(user: current_user).empty? %>
                     <%= f.text_field :answer %>
                     <%= f.submit "I know this!" %>
-                <% end %>    
+                <% end %>
             </div>
             <% end %>
 
