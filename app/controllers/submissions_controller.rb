@@ -19,6 +19,13 @@ class SubmissionsController < ApplicationController
     elsif @submission.save
       @submission.user.score += @task.points
       @submission.user.save
+
+
+      if @submission.user.submissions.count >= Task.all.count
+        redirect_to user_path(@submission.user.id)
+        return
+      end
+      
       redirect_to tasks_path, notice: 'You got it!'
     else
       render :new

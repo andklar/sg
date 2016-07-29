@@ -5,10 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Task.destroy_all
-User.destroy_all
 
-5.times do
+1.times do
   AnswerTask.create(
     name: Faker::Company.bs,
     description: Faker::Lorem.paragraph,
@@ -17,7 +15,7 @@ User.destroy_all
   )
 end
 
-5.times do
+1.times do
   PhotoTask.create(
     name: Faker::Company.bs,
     description: Faker::Lorem.paragraph,

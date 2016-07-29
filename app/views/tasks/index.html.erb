@@ -23,7 +23,11 @@ Tasks Index
                     <%= task.name %>
                     <div id='points-heading'><%= task.points %>
                         Points
-                        <span class='glyphicon glyphicon-ok'></span>
+                        <% if task.submissions.where(user: current_user).empty? %>
+                            <span class='glyphicon glyphicon-unchecked'></span>
+                        <% else %>
+                            <span class='glyphicon glyphicon-check'></span>
+                        <% end %>
                     </div>
                 </a>
             </h4>
@@ -49,3 +53,7 @@ Tasks Index
     <%end%>
 
 </div>
+
+<div class="modal-footer">
+        <button type="button" class="btn btn-default"><%= link_to "I'm done! ...for now", user_path(current_user.id) %></button>
+      </div>
