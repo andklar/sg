@@ -21,12 +21,16 @@
       <%= current_user.score %>
     </div>
     <div class='icon-top'>
-      <% if current_user.icon == 'boy' %>
+      <% if current_user.icon == 'boy' && current_user.score != nil %>
         <%= image_tag 'https://cdn0.iconfinder.com/data/icons/avatar-2/500/boy-128.png' %>
-      <% elsif current_user.icon == 'girl' %>
+      <% elsif current_user.icon == 'girl' && current_user.score != nil %>
         <%= image_tag('http://image.flaticon.com/icons/png/128/62/62806.png', size: "80x80") %>
       <% end %>
     </div>
+    <div class='username-container'>
+      <%= current_user.username %>
+    </div>
+
   </div>
   <aside class="sidebar">
     <nav class="side-menu-content">
@@ -38,7 +42,7 @@
     </nav>
   </aside>
 
-  <a id="nav-toggle" href="#"><span></span></a>
+  <a id="nav-toggle" href="#"><span data-turbolinks='false'></span></a>
 </div>
 
    </div>

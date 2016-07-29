@@ -111,4 +111,15 @@ input.right {
 	display: inline;
 }
 
+.modal-footer .btn + .btn {
+    margin-left: 50%;
+    transform: translate(-50%,-50%);
+    margin-bottom: 0;
+}
+
+button.btn.btn-default {
+    margin-bottom: 30px;
+    width: 150px;
+    text-align: center;
+}
 
