@@ -46,10 +46,10 @@
               <%end%>
               <%= f.radio_button :icon, 'boy'  %>
 
-              <%= f.label :icon_girl do %>
+              <%= f.label :icon_girl, 'girl' do %>
                 <%= image_tag "http://image.flaticon.com/icons/png/128/62/62806.png" %>
               <%end%>
-              <%= f.radio_button :icon, 'girl' %>
+              <%= f.radio_button :icon, 'girl', value: 'girl' %>
             </div>
         </fieldset>
 
