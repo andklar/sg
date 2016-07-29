@@ -169,3 +169,12 @@ input {
 .container {
   margin-left: 28%
 }
+
+#modal-fullscreen {
+    display: block;
+    padding-left: 0px;
+    z-index: 1045;
+    background-color: white;
+    opacity: .90;
+}
+
