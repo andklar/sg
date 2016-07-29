@@ -18,7 +18,7 @@ class SubmissionsController < ApplicationController
       redirect_to tasks_path, notice: "ERROR!ERROR!"
     elsif @submission.save
       @submission.user.score += @task.points
-      @submission.user.save
+      @submission.user.update(score: @submission.user.score)
 
 
       if @submission.user.submissions.count >= Task.all.count
