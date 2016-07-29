@@ -12,27 +12,27 @@
   <body>
 
 
-  <div class="hamburger-container">
-    <div>
-      <div class="nav-logo">
-        <%= image_tag "tsngChallenge.png" %>
-      </div>
-      <div class='score-container'>
-        <%= current_user.score %>
-      </div>
+<div class="hamburger-container">
+  <div>
+    <div class="nav-logo">
+      <%= image_tag "tsngChallenge.png" %>
     </div>
-    <aside class="sidebar">
-      <nav class="side-menu-content">
-        <ul class="side-menu" data-turbolinks="false">
-          <li><%= link_to "LEADERBOARD", users_url %></li>
-          <li><%= link_to "THE MISSION", tasks_url %></li>
-          <li><%= link_to "ABOUT US" %></li>
-        </ul>
-      </nav>
-    </aside>
-
-    <a id="nav-toggle" href="#"><span></span></a>
+    <div class='score-container'>
+      <%= current_user.score %>
+    </div>
   </div>
+  <aside class="sidebar">
+    <nav class="side-menu-content">
+      <ul class="side-menu" data-turbolinks="false">
+        <li><%= link_to "LEADERBOARD", users_url %></li>
+        <li><%= link_to "THE MISSION", tasks_url %></li>
+        <li><%= link_to "ABOUT US" %></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <a id="nav-toggle" href="#"><span></span></a>
+</div>
 
    </div>
 
@@ -52,8 +52,7 @@
     </footer>
     
 
-    </body>
-    
+
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -71,5 +70,5 @@
       </div>
     </div><!---modal-->
 
-  
+  </body>
 </html>
