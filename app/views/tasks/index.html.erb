@@ -43,6 +43,9 @@ Tasks Index
                 <% if task.submissions.where(user: current_user).empty? %>
                     <%= f.text_field :answer %>
                     <%= f.submit "I know this!" %>
+                    
+                    <%= f.file_field :image_string %>
+                    <%= f.submit "Got it!" %>
                 <% end %>
             </div>
             <% end %>

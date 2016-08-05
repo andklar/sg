@@ -1,11 +1,11 @@
 class TasksController < ApplicationController
 
-	def index
+  def index
     @tasks = Task.all
   end
 
   def show
-  	@task = Task.find(params[:id])
+    @task = Task.find(params[:id])
   end
 
   def new
@@ -41,6 +41,6 @@ class TasksController < ApplicationController
   private
 
   def task_params
-  	params.require(:task).permit(:name, :description, :points, :answer)
+    params.require(:task).permit(:name, :description, :points, :answer,:task_type)
   end
 end
