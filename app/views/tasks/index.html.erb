@@ -39,13 +39,16 @@ Tasks Index
 
             <%= task.description %>
             <%= form_for([task, task.submissions.build]) do |f| %>
-            <div class="field" id="dropdown-heading">
+            <div classz="field" id="dropdown-heading">
                 <% if task.submissions.where(user: current_user).empty? %>
+                  <% if task.task_type == "answer_tasks" %>
                     <%= f.text_field :answer %>
                     <%= f.submit "I know this!" %>
-                    
-                    <%= f.file_field :image_string %>
-                    <%= f.submit "Got it!" %>
+                  <% end %>
+                  <% if task.task_type == "photo_tasks" %>
+                      <%= f.file_field :image_string %>
+                      <%= f.submit "Oh Snap!" %>
+                  <% end %>
                 <% end %>
             </div>
             <% end %>
