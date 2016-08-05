@@ -9,7 +9,9 @@ $(document).on('ready', function() {
   var result = $('#notice').html() // target the html inside the notice id
   if (result) { $('#myModal').modal('show')
   }
+  if (result) { $('#notice').hide();
 
+  }
 
 });
 
