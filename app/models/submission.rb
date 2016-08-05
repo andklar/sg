@@ -1,7 +1,6 @@
 class Submission < ApplicationRecord
   belongs_to :user
   belongs_to :task
-
-  validates :answer, presence: true
+  mount_uploader :image_string, ImageStringUploader
 
 end
