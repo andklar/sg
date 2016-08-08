@@ -1,25 +1,48 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  CONGRATULATIONS
-</p>
+<% if current_user.submissions.count >= Task.all.count %>
+
+  <p>
+    CONGRATULATIONS <%=current_user.username%>!
+  </p>
+
+  <p>
+    You have successfully completed the ROM MISSION!
+  </p>
+
+  <p>
+    Your final score was <%=current_user.score%>
+  </p>
+
+  <p>Add your info below to be eligible for the grand prize!</p>
+
+  <p>
+    Please redeem your prize at the membership desk. Visit us online to find out more about the grand prize.
+  </p>
+
+<% else %>
+
+  <p>
+    Hey <%=current_user.username%>!
+  </p>
+
+  <p>
+    Your current score is <%=current_user.score%>
+  </p>
+
+  <p>
+    You haven't completed the mission yet... but there's still plenty of time!
+  </p>
+
+  <p>
+    If you can't finish right now, no worries! You can always come back later to finish.
+  </p>
+
+  <p>If you'd like us to let you know about future missions, events and prizes(!!!), press the button below or check us out online:</p>
+<% end %>
 
 <p>
-  You have successfully completed the ROM MISSION!
-</p>
-
-<p>
-  Your final score was <%=current_user.score%>
-</p>
-
-<p>Add your info below to be eligible for the grand prize!</p>
-
-<p>
-  Please redeem your prize at the membership desk. Visit us online to find out more about the grand prize.
-</p>
-
-<p>
-  www.thenextsupergeek.com
+  <%=link_to "thenextsupergeek.com", 'www.thenextsupergeek.com' %>
 </p>
 
 <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal-fullscreen">
@@ -37,51 +60,82 @@
 
         <%= form_for current_user do |f| %>
 
-        <fieldset id='fs-fullname'>
-          <h2 class="fs-title">What's Your Name?</h2>
-			        <%= f.label :first_name %>
-              <%= f.text_field :first_name, value: "" %>
+        <fieldset id='fs-firstname'>
+          <h2 class="fs-title">What's Your First Name?</h2>
 
-              <%= f.label :last_name %>
-              <%= f.text_field :last_name, value: "" %>
+            <%= f.text_field :first_name, value: "" %>
+
+            <br>
+
+            <input type="button" name="next" class="next action-button btn btn-default" value="Next" />
+
+        </fieldset>
+
+        <fieldset id='fs-lastname'>
+          <h2 class="fs-title">What's Your Last Name?</h2>
+
+            <%= f.text_field :last_name, value: "" %>
+
+            <br>
+            
+            <input type="button" name="previous" class="previous action-button btn btn-default" value="Previous" />
+            <input type="button" name="next" class="next action-button btn btn-default" value="Next" />
 
         </fieldset>
 
         <fieldset id='fs-age'>
           <h2 class="fs-title">How old are you?</h2>
-			  <%= f.label :age %>
-              <%= f.number_field :age, min: 5, max: 99 %>
+
+            <%= f.number_field :age, min: 5, max: 99 %>
+
+            <br>
+
+            <input type="button" name="previous" class="previous action-button btn btn-default" value="Previous" />
+            <input type="button" name="next" class="next action-button btn btn-default" value="Next" />
+
         </fieldset>
 
         <fieldset id='fs-email'>
           <h2 class="fs-title">What's Your Email?</h2>
-          <h3 class='fs-subtitle'>(or your parent's if you're under 13)</h3>
-			  <%= f.label :email %>
-              <%= f.text_field :email, value: "" %>
+            <h3 class='fs-subtitle'>(or your parent's if you're under 13)</h3>
+
+            <%= f.text_field :email, value: "" %>
+
+            <br>
+
+            <input type="button" name="previous" class="previous action-button btn btn-default" value="Previous" />
+            <input type="button" name="next" class="next action-button btn btn-default" value="Next" />
+
+
         </fieldset>
 
         <fieldset id='fs-password'>
           <h2 class="fs-title">Pick a password!</h2>
-            
-              <%= f.label :password %>
-              <%= f.password_field :password %>
-              <%= f.label :password_confirmation %>
-    		      <%= f.password_field :password_confirmation %>
-           
+
+            <%= f.password_field :password %>
+              
+            <h3 class='fs-subtitle'>(and once more just to be sure!)</h3>
+
+            <%= f.password_field :password_confirmation %>
+
+            <br>
+
+          <input type="button" name="previous" class="previous action-button btn btn-default" value="Previous" />
+          <input type="button" name="next" class="next action-button btn btn-default" value="Next" />
+
         </fieldset>
 
         <fieldset id='fs-submit'>
           <h2 class="fs-title">Good to go?</h2>
+          
+          <input type="button" name="previous" class="previous action-button btn btn-default" value="Previous" />
 
-          <%= f.submit %>
+          <%= f.submit "Yep!", class: 'btn btn-default' %>
 
         </fieldset>
 
       <% end %>
 
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>

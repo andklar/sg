@@ -28,7 +28,9 @@
       <% end %>
     </div>
     <div class='username-container'>
-      <%= current_user.username %>
+      <% if current_user.score != nil %>
+        <%= current_user.username %>
+      <% end %>
     </div>
 
   </div>

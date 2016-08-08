@@ -11,6 +11,7 @@ body {
   font-size: 20px;
   background-color: #feef34;
   margin: 0px;
+  color: #000;
 }
 
 @font-face {
@@ -110,7 +111,7 @@ ul.side-menu li {
   left: 2%;
   top: 0%;
   cursor: pointer;
-  padding: 30px 100px 36px 0px;
+  padding: 30px 30px 36px 0px;
 }
 
 #nav-toggle span,
@@ -340,16 +341,78 @@ hr {
     text-align: center;
 }
 
-input {
-/*  margin-left: 50%;*/
- /* transform: translate(-50%, -50%);*/
-/*  margin-top: 20px;*/
+#fs-username > input,
+#fs-submit > input {
+  margin-left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 20px;
+}
+#fs-icon > input {
+  transform: translate(-50%, -50%);
+  position: static;
+  margin-top: 25px;
+  left: none;
 }
 
-fieldset {
+#modal-fullscreen fieldset {
   margin: 20px;
+  position: absolute;
+  width: 100%;
+}
+
+#modal-fullscreen fieldset input {
+  display: inline-block;
+  margin: 50px;
+}
+
+#modal-fullscreen fieldset:not(:first-of-type) {
+  display: none;
 }
 
 .container {
   margin-left: 28%
+}
+
+input.previous.action-button {
+  display: block;
+  float: left;
+  left: 100px;
+}
+
+input.next.action-button {
+  display: block;
+  float: left;
+  left: 350px;
+}
+
+input {
+  position: relative;
+  transform: translate(-50%, -50%);
+  left: 43%;
+}
+
+/*.modal-footer .btn + .btn {
+    margin-left: 50%;
+    transform: translate(-50%,-50%);
+    position: static;
+    display: block;
+}*/
+
+button.btn.btn-default {
+    display: block;
+    position: inherit;
+    bottom: -400px;
+}
+
+
+
+input[type="text"], textarea {
+  background-color : #d1d1d1;
+  border-radius: 8%; 
+}
+
+// ================ Congrats message ======================
+
+p {
+  margin: 33px;
 }

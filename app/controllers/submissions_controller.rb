@@ -14,7 +14,7 @@ class SubmissionsController < ApplicationController
       @submission.user.score = 0
     end
 
-    if @submission.answer != @task.answer
+    if @submission.answer.downcase != @task.answer.downcase
       redirect_to tasks_path, notice: "ERROR!ERROR!"
     elsif @submission.save
       @submission.user.score += @task.points

@@ -36,6 +36,8 @@
 
               <%= f.text_field :username, value: "" %>
 
+              <input type="button" name="next" class="next action-button btn btn-default" value="Next" />
+
         </fieldset>
 
         <fieldset id='fs-icon'>
@@ -51,22 +53,29 @@
               <%end%>
               <%= f.radio_button :icon, 'girl', value: 'girl' %>
             </div>
+
+            <input type="button" name="previous" class="previous action-button btn btn-default" value="Previous" />
+            <input type="button" name="next" class="next action-button btn btn-default" value="Next" />
         </fieldset>
 
         <fieldset id='fs-submit'>
           <h2 class="fs-title">Ready?</h2>
 
-          <%= f.submit %>
+          <input type="button" name="previous" class="previous action-button btn btn-default" value="Previous" />
+          <%= f.submit "Let's Go!", class: 'btn btn-default'%>
 
         </fieldset>
 
       <% end %>
+      
+
+       <button type="button" class="btn btn-default"><%= link_to 'Skip', tasks_path %></button>
 
       </div>
-      <div class="modal-footer">
+<!--       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-default"><%= link_to 'Skip', tasks_path %></button>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>
