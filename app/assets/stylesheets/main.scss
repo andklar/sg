@@ -222,14 +222,18 @@ ul.side-menu li {
   margin-top: 0px;
 }
 
+.panel-group {
+  background-color: whitesmoke;
+}
+
 .panel-title {
-    font-size: 28px;
+    font-size: 20px;
     color: black;
     margin: 14px;
 }
 
 .panel-body {
-  font-size: 18px;
+  font-size: 16px;
   background-color: whitesmoke;
   border-radius: 40%;
 }
@@ -385,7 +389,7 @@ input.next.action-button {
   left: 350px;
 }
 
-input {
+fieldset.input {
   position: relative;
   transform: translate(-50%, -50%);
   left: 43%;
@@ -404,11 +408,26 @@ button.btn.btn-default {
     bottom: -400px;
 }
 
+button.btn.btn-primary {
+    margin: 50px;
+    left: 45%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    position: relative;
+}
 
 
-input[type="text"], textarea {
-  background-color : #d1d1d1;
+input[type="text"],
+input[type="password"],
+textarea {
+  background-color : #eae8e8;
   border-radius: 8%; 
+}
+
+input[type="number"], textarea {
+  background-color: #eae8e8; 
+  border-radius: 8%; 
+  font-size: 20px;
 }
 
 // ================ Congrats message ======================

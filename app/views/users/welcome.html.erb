@@ -16,7 +16,11 @@
 <!-- Large button group -->
 
 <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal-fullscreen">
-  Enter
+  Sign Up
+</button>
+
+<button type="button" class="btn btn-primary btn-lg" onclick="location.href='tasks#index'">
+  Quick Start!
 </button>
 
 <div class="modal modal-fullscreen fade" id="modal-fullscreen" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -69,7 +73,7 @@
       <% end %>
       
 
-       <button type="button" class="btn btn-default"><%= link_to 'Skip', tasks_path %></button>
+       <button type="button" class="btn btn-default" onclick="location.href='tasks#index'">Skip</button>
 
       </div>
 <!--       <div class="modal-footer">
