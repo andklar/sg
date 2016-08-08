@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html data-turbolinks='false'>
   <head>
     <title>The Next Super Geek</title>
       <%= stylesheet_link_tag    "application" %>
@@ -28,7 +28,9 @@
       <% end %>
     </div>
     <div class='username-container'>
-      <%= current_user.username %>
+      <% if current_user.score != nil %>
+        <%= current_user.username %>
+      <% end %>
     </div>
 
   </div>

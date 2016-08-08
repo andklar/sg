@@ -11,6 +11,7 @@ body {
   font-size: 20px;
   background-color: #feef34;
   margin: 0px;
+  color: #000;
 }
 
 @font-face {
@@ -110,7 +111,7 @@ ul.side-menu li {
   left: 2%;
   top: 0%;
   cursor: pointer;
-  padding: 30px 100px 36px 0px;
+  padding: 30px 30px 36px 0px;
 }
 
 #nav-toggle span,
@@ -221,14 +222,18 @@ ul.side-menu li {
   margin-top: 0px;
 }
 
+.panel-group {
+  background-color: whitesmoke;
+}
+
 .panel-title {
-    font-size: 28px;
+    font-size: 20px;
     color: black;
     margin: 14px;
 }
 
 .panel-body {
-  font-size: 18px;
+  font-size: 16px;
   background-color: whitesmoke;
   border-radius: 40%;
 }
@@ -340,16 +345,93 @@ hr {
     text-align: center;
 }
 
-input {
-/*  margin-left: 50%;*/
- /* transform: translate(-50%, -50%);*/
-/*  margin-top: 20px;*/
+#fs-username > input,
+#fs-submit > input {
+  margin-left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 20px;
+}
+#fs-icon > input {
+  transform: translate(-50%, -50%);
+  position: static;
+  margin-top: 25px;
+  left: none;
 }
 
-fieldset {
+#modal-fullscreen fieldset {
   margin: 20px;
+  position: absolute;
+  width: 100%;
+}
+
+#modal-fullscreen fieldset input {
+  display: inline-block;
+  margin: 50px;
+}
+
+#modal-fullscreen fieldset:not(:first-of-type) {
+  display: none;
 }
 
 .container {
   margin-left: 28%
+}
+
+input.previous.action-button {
+  display: block;
+  float: left;
+  left: 100px;
+}
+
+input.next.action-button {
+  display: block;
+  float: left;
+  left: 350px;
+}
+
+fieldset.input {
+  position: relative;
+  transform: translate(-50%, -50%);
+  left: 43%;
+}
+
+/*.modal-footer .btn + .btn {
+    margin-left: 50%;
+    transform: translate(-50%,-50%);
+    position: static;
+    display: block;
+}*/
+
+button.btn.btn-default {
+    display: block;
+    position: inherit;
+    bottom: -400px;
+}
+
+button.btn.btn-primary {
+    margin: 50px;
+    left: 45%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    position: relative;
+}
+
+
+input[type="text"],
+input[type="password"],
+textarea {
+  background-color : #eae8e8;
+  border-radius: 8%; 
+}
+
+input[type="number"], textarea {
+  background-color: #eae8e8; 
+  border-radius: 8%; 
+  font-size: 20px;
+}
+
+// ================ Congrats message ======================
+
+p {
+  margin: 33px;
 }

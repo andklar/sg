@@ -14,9 +14,10 @@ class SubmissionsController < ApplicationController
       @submission.user.score = 0
     end
 
+
     case @task.task_type
     when 'answer_tasks'
-      if @submission.answer != @task.answer
+      if @submission.answer.downcase != @task.answer.downcase
         redirect_to tasks_path, notice: "Sorry! Try Again!"
       elsif @submission.save
         @submission.user.score += @task.points

@@ -1,16 +1,7 @@
-<div class="task-background">
-  <%= image_tag "new-background1.jpg" %>
-    <!-- <iframe src="https://www.youtube.com/embed/FTRqIpCko0U?autoplay=1" frameborder="0" allowfullscreen></iframe> -->
-</div>
-<br>
+
 <div class="runner">
     <%= image_tag "runner-edit.png" %>
 </div>
-
-<!-- <div>Your Score: <%= @current_user.score %></div> -->
-
-
-Tasks Index
 
 
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
@@ -39,18 +30,21 @@ Tasks Index
 
             <%= task.description %>
             <%= form_for([task, task.submissions.build]) do |f| %>
-            <div classz="field" id="dropdown-heading">
-                <% if task.submissions.where(user: current_user).empty? %>
-                  <% if task.task_type == "answer_tasks" %>
-                    <%= f.text_field :answer %>
-                    <%= f.submit "I know this!" %>
+                <div class="field" id="dropdown-heading">
+                  <% if task.submissions.where(user: current_user).empty? %>
+
+                    <% if task.task_type == "answer_tasks" %>
+                      <%= f.text_field :answer %>
+                      <%= f.submit "I know this!", class: 'btn btn-default' %>
+                    <% end %>
+
+                    <% if task.task_type == "photo_tasks" %>
+                        <%= f.file_field :image_string %>
+                        <%= f.submit "Oh Snap!" %>
+                    <% end %>
+                    
                   <% end %>
-                  <% if task.task_type == "photo_tasks" %>
-                      <%= f.file_field :image_string %>
-                      <%= f.submit "Oh Snap!" %>
-                  <% end %>
-                <% end %>
-            </div>
+                </div>
             <% end %>
 
         </div>
