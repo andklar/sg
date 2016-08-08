@@ -194,7 +194,6 @@ ul.side-menu li {
 }
 
 // slide ROM mission
-
 .mission-slide {
   display: inline-block;
   position: absolute;
@@ -203,6 +202,21 @@ ul.side-menu li {
   left: -100px;
   animation: myframes 1.5s ease-in-out 0s 1 alternate forwards;
 }
+
+// background for slide mission ROM
+.background-mission-slide {
+  background: #ffcc33;
+  // background: #98bf21;
+  display: inline-block;
+  height: 88%;
+  width: 93%;
+  position: absolute;
+  border-radius: 30%;
+  z-index: -1;
+  margin-top: -95%;
+  opacity: 0.8;
+}
+
 
 @keyframes myframes {
   from {
@@ -235,7 +249,9 @@ ul.side-menu li {
 .panel-body {
   font-size: 16px;
   background-color: whitesmoke;
-  border-radius: 40%;
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 // =================== Leaderboard styling ====================
@@ -421,12 +437,12 @@ input[type="text"],
 input[type="password"],
 textarea {
   background-color : #eae8e8;
-  border-radius: 8%; 
+  border-radius: 8%;
 }
 
 input[type="number"], textarea {
-  background-color: #eae8e8; 
-  border-radius: 8%; 
+  background-color: #eae8e8;
+  border-radius: 8%;
   font-size: 20px;
 }
 
@@ -434,4 +450,11 @@ input[type="number"], textarea {
 
 p {
   margin: 33px;
+}
+
+.panel.panel-default {
+  border-color: #d4c19e;
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
 }

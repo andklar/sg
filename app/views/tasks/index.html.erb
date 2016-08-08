@@ -3,7 +3,6 @@
     <%= image_tag "runner-edit.png" %>
 </div>
 
-
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
     <% @tasks.each do |task| %>
 
@@ -30,6 +29,7 @@
 
             <%= task.description %>
             <%= form_for([task, task.submissions.build]) do |f| %>
+
                 <div class="field" id="dropdown-heading">
                   <% if task.submissions.where(user: current_user).empty? %>
 
@@ -42,7 +42,6 @@
                         <%= f.file_field :image_string %>
                         <%= f.submit "Oh Snap!" %>
                     <% end %>
-                    
                   <% end %>
                 </div>
             <% end %>
@@ -55,5 +54,5 @@
 </div>
 
 <div class="modal-footer">
-        <button type="button" class="btn btn-default"><%= link_to "I'm done! ...for now", user_path(current_user.id) %></button>
-      </div>
+  <button type="button" class="btn btn-default"><%= link_to "I'm done! ...for now", user_path(current_user.id) %></button>
+</div>
