@@ -11,6 +11,31 @@ img {
   margin-top: 10px;
 }
 
+// media query for responsive design
+.museum-image-1 {
+  display: none;
+}
+
+@media only screen and (max-width: 480px){
+  .museum-image {
+    display: none;
+  }
+
+  .museum-image-1 {
+    display: block;
+  }
+  .mission-slide {
+    display: block;
+    margin-left: -8%;
+    width: 40%;
+    top: 13%;
+  }
+  .background-mission-slide {
+    height: 89%;
+    width: 93%;
+  }
+}
+
 div#nav {
   float: right;
   margin-right: 15px;
