@@ -40,7 +40,7 @@
 
                     <% if task.task_type == "photo_tasks" %>
                         <%= f.file_field :image_string %>
-                        <%= f.submit "Oh Snap!" %>
+                        <%= f.submit "Oh Snap!", class: "btn btn-default" %>
                     <% end %>
                   <% end %>
                 </div>
