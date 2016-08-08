@@ -33,8 +33,8 @@ class SubmissionsController < ApplicationController
     else
       redirect_to tasks_path, notice: "Ooops! Something went terribly wrong!"
     end
+    end
   end
-end
 
   def edit
     @submission = Submission.find(params[:id])
@@ -58,5 +58,4 @@ end
     def load_task
       @task = Task.find(params[:task_id] || params[:answer_task_id] || params[:photo_task_id])
     end
-
-  end
+end
