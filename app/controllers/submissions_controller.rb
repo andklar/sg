@@ -17,7 +17,7 @@ class SubmissionsController < ApplicationController
     case @task.task_type
     when 'answer_tasks'
       if @submission.answer != @task.answer
-        redirect_to tasks_path, notice: "ERROR!ERROR!"
+        redirect_to tasks_path, notice: "Sorry! Try Again!"
       elsif @submission.save
         @submission.user.score += @task.points
         @submission.user.update(score: @submission.user.score)
