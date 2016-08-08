@@ -34,7 +34,23 @@ img {
     height: 89%;
     width: 93%;
   }
+  .runner {
+    width: 70%;
+    margin-left: 17%;
+    margin-top: -17%;
+  }
+ h4.panel-title {
+    font-size: 16px;
+  }
 }
+
+@media only screen and (max-width: 900px){
+  h4.panel-title {
+     font-size: 19px;
+   }
+}
+
+// media queries end
 
 div#nav {
   float: right;

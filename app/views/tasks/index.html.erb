@@ -10,9 +10,6 @@
 <!-- <div>Your Score: <%= @current_user.score %></div> -->
 
 
-Tasks Index
-
-
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
     <% @tasks.each do |task| %>
 
@@ -46,8 +43,10 @@ Tasks Index
                     <%= f.submit "I know this!" %>
                   <% end %>
                   <% if task.task_type == "photo_tasks" %>
+                    <div class="choose-file-button">
                       <%= f.file_field :image_string %>
                       <%= f.submit "Oh Snap!" %>
+                    </div>
                   <% end %>
                 <% end %>
             </div>
