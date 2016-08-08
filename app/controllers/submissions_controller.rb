@@ -17,18 +17,20 @@ class SubmissionsController < ApplicationController
     case @task.task_type
     when 'answer_tasks'
       if @submission.answer != @task.answer
-        redirect_to tasks_path, notice: "ERROR!ERROR!"
+        redirect_to tasks_path, notice: "Sorry! Try Again!"
       elsif @submission.save
         @submission.user.score += @task.points
         @submission.user.update(score: @submission.user.score)
-        redirect_to tasks_path, notice: 'You got it!'
+        redirect_to tasks_path, notice: 'Woohoo! You got it!'
       else
         redirect_to tasks_path, notice: 'Ooops! Something went terribly wrong!'
       end
     when"photo_tasks"
     if @submission.image_string != nil && @submission.save
       @submission.user.save
-      redirect_to tasks_path, notice:" Cool Stuff!"
+      redirect_to tasks_path, notice:"Cool Stuff!"
+    elsif @submission.image_string = nil
+      return redirect_to tasks_path, notice:"Your Art is too deep!Try a picture instead!"
 
     else
       redirect_to tasks_path, notice: "Ooops! Something went terribly wrong!"
@@ -43,7 +45,7 @@ end
   def update
     @submission = Submission.find(params[:id])
     if @submission.update
-      redirect_to tasks_path, notice: 'You got it!'
+      redirect_to tasks_path, notice: 'Awesome! You got it!'
     else
       render :edit, notice: 'Not quite! Give it another go!'
     end
