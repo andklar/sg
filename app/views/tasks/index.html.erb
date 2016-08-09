@@ -14,9 +14,9 @@
                     <div id='points-heading'><%= task.points %>
                         Points
                         <% if task.submissions.where(user: current_user).empty? %>
-                            <span class='glyphicon glyphicon-unchecked'></span>
+                            <%=image_tag('button_radial.png', size: '32x32', class: 'checkbox') %>
                         <% else %>
-                            <span class='glyphicon glyphicon-check'></span>
+                            <%=image_tag('checkbox.png', size: '32x32', class: 'checkbox') %>
                         <% end %>
                     </div>
                 </a>

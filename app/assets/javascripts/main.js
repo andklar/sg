@@ -35,5 +35,11 @@ $(function(){
 
  }); // end of 2nd document ready
 
+$(document).keypress(function(e) {
+      if(e.which == 13) {
+        e.preventDefault
+      }
+    });
+
 }); // end of function
 }); // end of 1st document ready

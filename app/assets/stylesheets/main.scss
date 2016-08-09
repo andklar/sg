@@ -103,7 +103,6 @@ ul.side-menu {
 
 ul.side-menu li {
     margin-bottom: 10px;
-
 }
 
 #nav-toggle {
@@ -186,11 +185,11 @@ ul.side-menu li {
 .icon-top > img {
   height: 100px;
   width: 100px;
-  max-height: 30px;
-  max-width: 30px;
+  max-height: 36px;
+  max-width: 36px;
   float: right;
-  margin-right: -144px;
-  margin-top: 16px;
+  margin-right: -169px;
+  margin-top: 17px;
 }
 
 // slide ROM mission
@@ -234,24 +233,6 @@ ul.side-menu li {
 // Styling for homepage image
 .museum-image {
   margin-top: 0px;
-}
-
-.panel-group {
-  background-color: whitesmoke;
-}
-
-.panel-title {
-    font-size: 20px;
-    color: black;
-    margin: 14px;
-}
-
-.panel-body {
-  font-size: 16px;
-  background-color: whitesmoke;
-  width: 85%;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 // =================== Leaderboard styling ====================
@@ -353,12 +334,14 @@ hr {
 }
 
 .fs-title {
-    text-align: center;
+    text-align: left;
     margin: 15px;
+    margin-right: 40px;
 }
 
 .fs-subtitle {
-    text-align: center;
+    text-align: left;
+    margin-right: 80px;
 }
 
 #fs-username > input,
@@ -367,11 +350,27 @@ hr {
   transform: translate(-50%, -50%);
   margin-top: 20px;
 }
+
+#icon {
+  margin: 5px;
+  left: -58px;
+  position: relative;
+}
+
+#icon-action {
+  position: relative;
+  float: left;
+}
+
+#icon-submit {
+  position: fixed;
+  float: right;
+}
+
 #fs-icon > input {
   transform: translate(-50%, -50%);
-  position: static;
   margin-top: 25px;
-  left: none;
+  margin-right: 20px;
 }
 
 #modal-fullscreen fieldset {
@@ -405,6 +404,18 @@ input.next.action-button {
   left: 350px;
 }
 
+input.previous.action-button {
+  display: block;
+  float: left;
+  left: 100px;
+}
+
+input.next.action-button {
+  display: block;
+  float: left;
+  left: 350px;
+}
+
 fieldset.input {
   position: relative;
   transform: translate(-50%, -50%);
@@ -421,7 +432,7 @@ fieldset.input {
 button.btn.btn-default {
     display: block;
     position: inherit;
-    bottom: -400px;
+    bottom: -500px;
 }
 
 button.btn.btn-primary {
@@ -446,30 +457,98 @@ input[type="number"], textarea {
   font-size: 20px;
 }
 
+
+
 // ================ Congrats message ======================
 
-p {
+p, .badge {
   margin: 33px;
+  margin-left: 80px;
+  width: 75%;
 }
+
+.badge-container {
+}
+
+#badge {
+  margin: 33px;
+  margin-left: 30%;
+  width: 36%;
+  max-width: 50%;
+}
+
+
+
+// ================ tasks index page ======================
 
 .panel.panel-default {
   border-color: #d4c19e;
   width: 85%;
   margin-left: auto;
   margin-right: auto;
+  transition: ease;
+  background-color: rgba(12, 12, 12, 0.93);
 }
 
-#dropdown-heading > input, button {
-  position: relative;
-  float: right;
+.panel-group {
+  background-color: rgba(12, 12, 12, 0.93);
+  border-radius: 1%;
 }
 
-#submission_image_string {
-  position: relative;
-  float: right;
+.panel-title {
+  font-size: 20px;
+  color: black;
+  margin: 14px;
 }
 
-input[type="button" i], input[type="submit" i], input[type="reset" i], input[type="file" i]::-webkit-file-upload-button, button {
+.panel-body {
+  font-size: 16px;
+  background-color: #dad9d9;
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#dropdown-heading > input {
   position: relative;
   float: right;
+  margin: 10px
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 3;
+    color: inherit;
+}
+
+/*#submission_image_string {
+  position: relative;
+  float: right;
+}*/
+
+/*#submission_image_string > input[type="button" i], input[type="submit" i], input[type="reset" i], input[type="file" i]::-webkit-file-upload-button, button {
+  position: relative;
+  float: right;
+}*/
+
+
+.checkbox {
+  width: auto;
+  max-width: none;
+  display: inline;
+  float: right;
+  margin-left: 30px;
+}
+
+
+// ================ about us page ======================
+
+
+#ribbon {
+    margin: 33px;
+    margin-left: 35%;
+    width: 19%;
+    max-width: 50%;
+    height: 0%;
 }
