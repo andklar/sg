@@ -24,7 +24,8 @@ gem "google-api-client"
 gem "mime-types"
 # Generates random username
 gem "random_username"
-
+#Figaro for access key protection
+gem "figaro"
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

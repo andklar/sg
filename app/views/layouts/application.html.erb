@@ -7,7 +7,7 @@
       <%= csrf_meta_tags %>
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="viewport" content="width=deviice-width, initial-scale=1.0">
   </head>
   <body>
 
@@ -22,9 +22,11 @@
     </div>
     <div class='icon-top'>
       <% if current_user.icon == 'boy' && current_user.score != nil %>
-        <%= image_tag 'https://cdn0.iconfinder.com/data/icons/avatar-2/500/boy-128.png' %>
+        <%= image_tag('icon_boy.png', size: "80x80") %>
       <% elsif current_user.icon == 'girl' && current_user.score != nil %>
-        <%= image_tag('http://image.flaticon.com/icons/png/128/62/62806.png', size: "80x80") %>
+        <%= image_tag('icon_girl.png', size: "80x80") %>
+      <% elsif current_user.score != nil %>
+        <%= image_tag('icon_profile.png', size: "80x80") %>
       <% end %>
     </div>
     <div class='username-container'>
@@ -39,7 +41,7 @@
       <ul class="side-menu" data-turbolinks="false">
         <li><%= link_to "LEADERBOARD", users_url %></li>
         <li><%= link_to "THE MISSION", tasks_url %></li>
-        <li><%= link_to "ABOUT US" %></li>
+        <li><%= link_to "ABOUT US", about_url %></li>
       </ul>
     </nav>
   </aside>
@@ -63,7 +65,7 @@
         &copy;&nbsp;2016 NextSuperGeek
       </div>
     </footer>
-    
+
 
 
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -71,7 +73,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            <h4 class="modal-title" id="myModalLabel">Info</h4>
           </div>
           <div class="modal-body">
               <p id="notice"><%= flash[:notice] %></p>

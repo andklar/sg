@@ -10,6 +10,10 @@
     You have successfully completed the ROM MISSION!
   </p>
 
+  <div class='badge-container'>
+    <%= link_to image_tag('MissionBadge.png', size: '300x300', id: 'badge')%>
+  </div>
+  
   <p>
     Your final score was <%=current_user.score%>
   </p>

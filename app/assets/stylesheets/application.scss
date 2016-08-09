@@ -11,6 +11,53 @@ img {
   margin-top: 10px;
 }
 
+// media query for responsive design
+.museum-image-1 {
+  display: none;
+}
+
+@media only screen and (max-width: 480px){
+  .museum-image {
+    display: none;
+  }
+
+  .museum-image-1 {
+    display: block;
+  }
+  .mission-slide {
+    display: block;
+    margin-left: -5%;
+    width: 31%;
+    top: 12%;
+  }
+  .background-mission-slide {
+    height: 89%;
+    width: 93%;
+  }
+  .runner {
+    width: 50%;
+    margin-left: 25%;
+    margin-top: -10%;
+  }
+ h4.panel-title {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 760px){
+  button.btn.btn-default {
+     bottom: -555px;
+   }
+}
+
+@media only screen and (max-width: 900px){
+  h4.panel-title {
+     font-size: 19px;
+   }
+}
+
+// media queries end
+
 div#nav {
   float: right;
   margin-right: 15px;
@@ -27,12 +74,14 @@ div#nav {
   padding-right: 50px;
   border-radius: 25%;
   margin-top: 17px;
+  line-height: 1.77857143;
 }
 
 .username-container {
-  float: right;
+  float: left;
   padding-left: 50px;
   padding-right: 50px;
+  margin-left: 22px;
   margin-top: 17px;
 }
 
@@ -68,12 +117,12 @@ div#nav {
 // }
 
 // testing button for hover
-.button {
+/*.button {
   display: inline-block;
   border-radius: 50px;
   background-color: #feef34;
   border: none;
-  color: #black;
+  color: black;
   text-align: center;
   font-size: 28px;
   padding: 20px;
@@ -106,4 +155,4 @@ div#nav {
 .button:hover span:after {
   opacity: 1;
   right: 0;
-}
+}*/

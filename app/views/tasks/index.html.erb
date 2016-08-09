@@ -3,7 +3,6 @@
     <%= image_tag "runner-edit.png" %>
 </div>
 
-
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
     <% @tasks.each do |task| %>
 
@@ -15,9 +14,9 @@
                     <div id='points-heading'><%= task.points %>
                         Points
                         <% if task.submissions.where(user: current_user).empty? %>
-                            <span class='glyphicon glyphicon-unchecked'></span>
+                            <%=image_tag('button_radial.png', size: '32x32', class: 'checkbox') %>
                         <% else %>
-                            <span class='glyphicon glyphicon-check'></span>
+                            <%=image_tag('checkbox.png', size: '32x32', class: 'checkbox') %>
                         <% end %>
                     </div>
                 </a>
@@ -30,12 +29,21 @@
 
             <%= task.description %>
             <%= form_for([task, task.submissions.build]) do |f| %>
-            <div class="field" id="dropdown-heading">
-                <% if task.submissions.where(user: current_user).empty? %>
-                    <%= f.text_field :answer %>
-                    <%= f.submit "I know this!", class: 'btn btn-default'  %>
-                <% end %>
-            </div>
+
+                <div class="field" id="dropdown-heading">
+                  <% if task.submissions.where(user: current_user).empty? %>
+
+                    <% if task.task_type == "answer_tasks" %>
+                      <%= f.text_field :answer %>
+                      <%= f.submit "I know this!", class: 'btn btn-default' %>
+                    <% end %>
+
+                    <% if task.task_type == "photo_tasks" %>
+                        <%= f.file_field :image_string %>
+                        <%= f.submit "Oh Snap!", class: "btn btn-default" %>
+                    <% end %>
+                  <% end %>
+                </div>
             <% end %>
 
         </div>
@@ -46,5 +54,5 @@
 </div>
 
 <div class="modal-footer">
-        <button type="button" class="btn btn-default"><%= link_to "I'm done! ...for now", user_path(current_user.id) %></button>
-      </div>
+  <button type="button" class="btn btn-default"><%= link_to "I'm done! ...for now", user_path(current_user.id) %></button>
+</div>

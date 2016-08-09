@@ -14,21 +14,28 @@ class SubmissionsController < ApplicationController
       @submission.user.score = 0
     end
 
-    if @submission.answer.downcase != @task.answer.downcase
-      redirect_to tasks_path, notice: "ERROR!ERROR!"
-    elsif @submission.save
-      @submission.user.score += @task.points
-      @submission.user.update(score: @submission.user.score)
 
-
-      if @submission.user.submissions.count >= Task.all.count
-        redirect_to user_path(@submission.user.id)
-        return
+    case @task.task_type
+    when 'answer_tasks'
+      if @submission.answer.downcase != @task.answer.downcase
+        redirect_to tasks_path, notice: "Sorry! Try Again!"
+      elsif @submission.save
+        @submission.user.score += @task.points
+        @submission.user.update(score: @submission.user.score)
+        redirect_to tasks_path, notice: 'Woohoo! You got it!'
+      else
+        redirect_to tasks_path, notice: 'Ooops! Something went terribly wrong!'
       end
-      
-      redirect_to tasks_path, notice: 'You got it!'
+    when"photo_tasks"
+    if @submission.image_string != nil && @submission.save
+      @submission.user.save
+      redirect_to tasks_path, notice:"Cool Stuff!"
+    elsif @submission.image_string = nil
+      return redirect_to tasks_path, notice:"Your Art is too deep!Try a picture instead!"
+
     else
-      render :new
+      redirect_to tasks_path, notice: "Ooops! Something went terribly wrong!"
+    end
     end
   end
 
@@ -39,7 +46,7 @@ class SubmissionsController < ApplicationController
   def update
     @submission = Submission.find(params[:id])
     if @submission.update
-      redirect_to tasks_path, notice: 'You got it!'
+      redirect_to tasks_path, notice: 'Awesome! You got it!'
     else
       render :edit, notice: 'Not quite! Give it another go!'
     end
@@ -48,11 +55,10 @@ class SubmissionsController < ApplicationController
     private
 
     def submission_params
-      params.require(:submission).permit(:name, :task_id, :user_id, :answer)
+      params.require(:submission).permit(:name, :task_id, :user_id, :answer, :image_string)
     end
 
     def load_task
       @task = Task.find(params[:task_id] || params[:answer_task_id] || params[:photo_task_id])
     end
-
-  end
+end
