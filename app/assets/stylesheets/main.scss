@@ -207,8 +207,8 @@ ul.side-menu li {
   background: #ffcc33;
   // background: #98bf21;
   display: inline-block;
-  height: 88%;
-  width: 93%;
+  height: 89%;
+  width: 92%;
   position: absolute;
   border-radius: 30%;
   z-index: -1;
@@ -437,7 +437,7 @@ button.btn.btn-default {
 
 button.btn.btn-primary {
     margin: 50px;
-    left: 45%;
+    margin-left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
     position: relative;
@@ -515,6 +515,12 @@ p, .badge {
   margin: 10px
 }
 
+// #dropdown-heading > input, button {
+//   position: relative;
+//   float: right;
+// }
+
+
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     font-family: inherit;
     font-weight: 500;
@@ -552,3 +558,8 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     max-width: 50%;
     height: 0%;
 }
+
+// input[type="button" i], input[type="submit" i], input[type="reset" i], input[type="file" i]::-webkit-file-upload-button, button {
+//   position: relative;
+//   float: right;
+// }
